@@ -13,7 +13,7 @@ import java.awt.*;
 public class loadingScreen {
 
   JFrame frame;
-  JLabel image=new JLabel(new ImageIcon("C:\\Users\\Adam Beck-Budovec\\Documents\\cryptoApp\\src\\com\\cryptoApp\\goku-jumping.gif"));
+  JLabel image=new JLabel(new ImageIcon("CryptoAppInvestment/goku-jumping.gif"));
   JLabel text=new JLabel("Loading Application");
   JProgressBar progressBar=new JProgressBar();
   JLabel message=new JLabel();//Crating a JLabel for displaying the message
