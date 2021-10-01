@@ -1,14 +1,8 @@
 package com.cryptoApp;
 
 import javax.swing.*;
-import javax.swing.BorderFactory;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Dimension;
-import javax.swing.border.Border;
 import java.awt.*;
+import java.net.http.HttpResponse;
 
 public class loadingScreen {
 
@@ -17,6 +11,11 @@ public class loadingScreen {
   JLabel text=new JLabel("Loading Application");
   JProgressBar progressBar=new JProgressBar();
   JLabel message=new JLabel();//Crating a JLabel for displaying the message
+
+  HttpResponse<String> response = Unirest.get("https://coingecko.p.rapidapi.com/coins/markets?vs_currency=usd&page=1&per_page=100&order=market_cap_desc")
+          .header("x-rapidapi-host", "coingecko.p.rapidapi.com")
+          .header("x-rapidapi-key", "2396bfa47amsh46a63ce5f0e33b8p1a101cjsn4bcbe07a1943")
+          .asString();
 
   loadingScreen()
   {
@@ -75,8 +74,7 @@ public class loadingScreen {
         i++;
         if(i==100)
           frame.dispose();
-        new menuWindow();
-        new menuWindow();
+
       }catch(Exception e){
         e.printStackTrace();
 
